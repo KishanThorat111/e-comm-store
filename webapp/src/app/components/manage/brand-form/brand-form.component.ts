@@ -34,14 +34,14 @@ export class BrandFormComponent {
     console.log(this.name);
     this.brandService.addBrand(this.name).subscribe((result:any)=>{
       alert("Brand added successfully");
-      this.router.navigate(['/admin/brands']);
+      this.router.navigate(['/admin/brand']);
     });
   }
   update(){
     console.log(this.name);
     this.brandService.updateBrand(this.id,this.name).subscribe((result:any)=>{
       alert("Brand updated successfully");
-      this.router.navigate(['/admin/brands']);
+      this.router.navigate(['/admin/brand']);
     });
   }
 }

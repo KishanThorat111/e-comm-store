@@ -11,27 +11,27 @@ export class BrandService {
   constructor() { }
 
   getBrands() {
-    return this.http.get(environment.apiUrl + '/brands');
+    return this.http.get(environment.apiUrl + '/brand');
   }
 
 
   getBrandById(id: string) {
-    return this.http.get<Brand>(environment.apiUrl + '/brands/' + id);
+    return this.http.get<Brand>(environment.apiUrl + '/brand/' + id);
   }
 
   addBrand(name: string) {
-    return this.http.post<Brand>(environment.apiUrl + '/brands', {
+    return this.http.post<Brand>(environment.apiUrl + '/brand', {
       name: name,
     });
 
   }
   updateBrand(id: string, name: string) {
-    return this.http.put(environment.apiUrl + '/brands/' + id, {
+    return this.http.put(environment.apiUrl + '/brand/' + id, {
       name: name,
     });
   }
 
   deleteBrandById(id: string) {
-    return this.http.delete(environment.apiUrl + '/brands/' + id);
+    return this.http.delete(environment.apiUrl + '/brand/' + id);
   }
 }
