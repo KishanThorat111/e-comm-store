@@ -1,1 +1,196 @@
-<p>home works!</p>
+<div class="px-20">
+  <div class="m-4">
+    <h4 class="text-2xl font-bold">Featured Products</h4>
+    <div class="grid grid-cols-4 gap-6">
+      @for (product of featuredProducts; track $index) {
+      <div class="shadow rounded-lg overflow-hidden">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+      }
+    </div>
+  </div>
+
+  <div class="m-4">
+    <h4 class="text-2xl font-bold">New Products</h4>
+    <div class="grid grid-cols-4 gap-6">
+      @for (product of newProducts; track $index) {
+      <div class="shadow rounded-lg overflow-hidden">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+      }
+    </div>
+  </div>
+</div>
+
+<!-- <div class="px-20">
+  <div class="mt-4">
+    <h4 class="text-2xl font-bold">Featured Products</h4>
+    <div class="grid grid-cols-5 gap-4">
+      @for (product of featuredProducts; track $index) {
+      <div class="shadow rounded-lg overflow-hidden">
+        <div class="border-r-4 w-full">
+          <img
+            [src]="product.images[0]"
+            alt="Product Image"
+            class="w-full h-auto aspect-[3/2] object-cover"
+          />
+          <div class="p-4">
+            <h6 class="mb-2 font-semibold text-lg">
+              {{ product.name }}
+            </h6>
+            <p class="text-gray-600 text-xs line-clamp-2">
+              {{ product.shortDescription }}
+            </p>
+            <div class="flex justify-between items-center mt-2">
+              <span class="text-xl font-bold text-green-600">
+                {{ product.price }}₹
+              </span>
+              <button
+                mat-flat-button
+                color="primary"
+                class="text-xs font-medium px-3 py-1 rounded-md"
+                style="
+                  width: auto;
+                  height: 40px;
+                  font-size: 16px;
+                  padding: 4px 10px;
+                "
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <h4 class="text-2xl font-bold">New Products</h4>
+    <div class="grid grid-cols-4 gap-6">
+      @for (product of newProducts; track $index) {
+      <div class="shadow rounded-lg overflow-hidden">
+        <div class="border-r-4 w-full">
+          <img
+            [src]="product.images[0]"
+            alt="Product Image"
+            class="w-full h-auto aspect-[3/2] object-cover"
+          />
+          <div class="p-4">
+            <h6 class="mb-2 font-semibold text-lg">
+              {{ product.name }}
+            </h6>
+            <p class="text-gray-600 text-sm line-clamp-2">
+              {{ product.shortDescription }}
+            </p>
+            <div class="flex justify-between items-center mt-4">
+              <span class="text-xl font-bold text-green-600">
+                {{ product.price }}₹
+              </span>
+              <button mat-flat-button color="primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="px-20">
+  <div class="mt-4">
+    <h4 class="text-2xl font-bold">Featured Products</h4>
+    <div class="flex justify-between gap-4">
+      @for (product of featuredProducts; track $index) {
+      <div class="w-3/12 shadow">
+        <div class="border-r-4 w-full">
+          <img
+            [src]="product.images[0]"
+            alt="Product Image"
+            class="w-full h-52 object-cover"
+          />
+          <div class="p-4">
+            <h6 class="mb-2">
+              {{ product.name }}
+            </h6>
+            <p>
+              {{ product.shortDescription }}
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold"> {{ product.price }}₹ </span>
+              <button mat-flat-button color="primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  <div class="mt-4">
+    <h4 class="text-2xl font-bold">New Products</h4>
+    <div class="flex justify-between gap-4">
+      @for (product of newProducts; track $index) {
+      <div class="w-3/12 shadow">
+        <div class="border-r-4 w-full">
+          <img
+            [src]="product.images[0]"
+            alt="Product Image"
+            class="w-full h-52 object-cover"
+          />
+          <div class="p-4">
+            <h6 class="mb-2">
+              {{ product.name }}
+            </h6>
+            <p>
+              {{ product.shortDescription }}
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold"> {{ product.price }}₹ </span>
+              <button mat-flat-button color="primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div> -->
+
+<!-- <div>
+  <h4 class="text-2xl font-bold">Featured Products</h4>
+  <div class="flex flex-wrap gap-2">
+    @for (product of featuredProducts; track $index) {
+    <div class="w-1/4 shadow">
+      <div
+        class="border border-gray-300 rounded-lg p-5 shadow-md flex flex-col justify-between min-h-[400px] mx-auto"
+      >
+        <img
+          [src]="product.images[0]"
+          alt="Product Image"
+          class="w-full h-auto rounded-lg flex-shrink-0"
+        />
+        <h4
+          class="text-sm text-gray-800 my-3 flex-shrink-0 overflow-hidden text-ellipsis whitespace-nowrap"
+        >
+          {{ product.name }}
+        </h4>
+
+        <p
+          class="text-sm text-gray-600 my-2 line-clamp-2 flex-grow overflow-hidden"
+        >
+          {{ product.shortDescription }}
+        </p>
+        <div class="flex justify-between items-center">
+          <p class="text-lg text-gray-700 my-2">{{ product.price }}₹</p>
+          <button
+            class="bg-yellow-500 text-white border-none rounded-lg px-5 py-2 text-lg cursor-pointer"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div> -->

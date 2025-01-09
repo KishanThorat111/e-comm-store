@@ -8,4 +8,7 @@ export interface Product {
     images: [String];
     categoryId: String;
     brandId: String;
+    isFeatured: boolean;
+    isNew: boolean;
+
 } 
