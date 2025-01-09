@@ -7,11 +7,11 @@ import { BrandService } from '../../../services/brand.service';
 
 
 @Component({
-  selector: 'app-brand-form',
-  standalone: true,
-  imports: [FormsModule, MatInputModule, MatButtonModule],
-  templateUrl: './brand-form.component.html',
-  styleUrl: './brand-form.component.scss'
+    selector: 'app-brand-form',
+    standalone: true,
+    imports: [FormsModule, MatInputModule, MatButtonModule],
+    templateUrl: './brand-form.component.html',
+    styleUrl: './brand-form.component.scss'
 })
 export class BrandFormComponent {
   name!: string;

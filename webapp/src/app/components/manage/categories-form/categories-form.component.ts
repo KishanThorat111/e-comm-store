@@ -7,11 +7,11 @@ import {ActivatedRoute, Router} from '@angular/router';
 import { MatSelectModule } from '@angular/material/select';
 
 @Component({
-  selector: 'app-categories-form',
-  standalone: true,
-  imports: [FormsModule, MatInputModule, MatButtonModule, MatSelectModule],
-  templateUrl: './categories-form.component.html',
-  styleUrl: './categories-form.component.scss'
+    selector: 'app-categories-form',
+    standalone: true,
+    imports: [FormsModule, MatInputModule, MatButtonModule, MatSelectModule],
+    templateUrl: './categories-form.component.html',
+    styleUrl: './categories-form.component.scss'
 })
 export class CategoriesFormComponent {
   name!: string;

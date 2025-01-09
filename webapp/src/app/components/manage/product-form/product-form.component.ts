@@ -14,11 +14,11 @@ import { Product } from '../../../types/product';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @Component({
-  selector: 'app-product-form',
-  standalone: true,
-  imports: [FormsModule, MatInputModule, MatButtonModule, ReactiveFormsModule, MatSelectModule, MatCheckboxModule],
-  templateUrl: './product-form.component.html',
-  styleUrl: './product-form.component.scss'
+    selector: 'app-product-form',
+    standalone: true,
+    imports: [FormsModule, MatInputModule, MatButtonModule, ReactiveFormsModule, MatSelectModule, MatCheckboxModule],
+    templateUrl: './product-form.component.html',
+    styleUrl: './product-form.component.scss'
 })
 export class ProductFormComponent {
   formBuilder=inject(FormBuilder);

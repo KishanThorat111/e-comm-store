@@ -10,11 +10,11 @@ import { RouterLink } from '@angular/router';
 import { Product } from '../../../types/product';
 
 @Component({
-  selector: 'app-products',
-  standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule, MatButtonModule, RouterLink],
-  templateUrl: './products.component.html',
-  styleUrl: './products.component.scss'
+    selector: 'app-products',
+    standalone: true,
+    imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule, MatButtonModule, RouterLink],
+    templateUrl: './products.component.html',
+    styleUrl: './products.component.scss'
 })
 export class ProductsComponent {
   displayedColumns: string[] = ['id', 'name', 'shortDescription','price','discount', 'action'];

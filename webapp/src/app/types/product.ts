@@ -1,4 +1,5 @@
 export interface Product {
+imageUrl: any;
     _id?: String;
     name: String;
     shortDescription: String;

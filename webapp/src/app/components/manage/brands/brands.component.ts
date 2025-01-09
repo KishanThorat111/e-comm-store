@@ -11,11 +11,11 @@ import { Brand } from '../../../types/brand';
 
 
 @Component({
-  selector: 'app-brands',
-  standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule, MatButtonModule, RouterLink],
-  templateUrl: './brands.component.html',
-  styleUrl: './brands.component.scss'
+    selector: 'app-brands',
+    standalone: true,
+    imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule, MatButtonModule, RouterLink],
+    templateUrl: './brands.component.html',
+    styleUrl: './brands.component.scss'
 })
 export class BrandsComponent {
   displayedColumns: string[] = ['id', 'name', 'action'];
