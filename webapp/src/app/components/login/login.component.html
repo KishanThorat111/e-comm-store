@@ -1,0 +1,43 @@
+<div class="flex justify-center w-full">
+  <div class="w-6/12 mt-10 max-w-md bg-white rounded-lg shadow-md p-6">
+    <h2 class="text-2xl font-bold text-gray-800 mb-4">Login</h2>
+    <form [formGroup]="loginForm">
+      <!-- Email -->
+      <div>
+        <mat-form-field class="w-full">
+          <mat-label for="email">Email</mat-label>
+          <input
+            formControlName="email"
+            matInput
+            placeholder="Enter Email"
+            required
+          />
+        </mat-form-field>
+      </div>
+      <!-- Password -->
+      <div>
+        <mat-form-field class="w-full">
+          <mat-label for="password">Password</mat-label>
+          <input
+            type="password"
+            formControlName="password"
+            matInput
+            placeholder="Enter your Password"
+            required
+          />
+        </mat-form-field>
+      </div>
+
+      <!-- Submit Button -->
+      <div>
+        <button
+          mat-raised-button
+          (click)="login()"
+          [disabled]="loginForm.invalid"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

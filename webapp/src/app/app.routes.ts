@@ -6,46 +6,92 @@ import { BrandsComponent } from './components/manage/brands/brands.component';
 import { BrandFormComponent } from './components/manage/brand-form/brand-form.component';
 import { ProductsComponent } from './components/manage/products/products.component';
 import { ProductFormComponent } from './components/manage/product-form/product-form.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { authGaurd } from './core/auth-guard';
+import { AdminDashboardComponent } from './components/manage/admin-dashboard/admin-dashboard.component';
+import { adminGaurd } from './core/admin-guard';
+import { CustomerProfileComponent } from './components/customer-profile/customer-profile.component';
 
 export const routes: Routes = [
     {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate:[authGaurd]
+    },
+    {
+        path: 'admin',
+        component: AdminDashboardComponent,
+        canActivate:[adminGaurd]
     },
     {
         path:'admin/categories',
-        component: CategoriesComponent
+        component: CategoriesComponent,
+        canActivate:[adminGaurd]
     },
     {
         path: 'admin/categories/add',
-        component: CategoriesFormComponent
+        component: CategoriesFormComponent,
+        canActivate:[adminGaurd]
     },
     {
         path: 'admin/categories/:id',
-        component: CategoriesFormComponent
+        component: CategoriesFormComponent,
+        canActivate:[adminGaurd]
     },
     {
         path:'admin/brand',
-        component: BrandsComponent
+        component: BrandsComponent,
+        canActivate:[adminGaurd]
     },
     {
         path: 'admin/brand/add',
-        component: BrandFormComponent
+        component: BrandFormComponent,
+        canActivate:[adminGaurd]
     },
     {
         path: 'admin/brand/:id',
-        component:  BrandFormComponent
+        component:  BrandFormComponent,
+        canActivate:[adminGaurd]
     },
     {
         path:'admin/products',
-        component: ProductsComponent
+        component: ProductsComponent,
+        canActivate:[adminGaurd]
     },
     {
         path: 'admin/products/add',
-        component: ProductFormComponent
+        component: ProductFormComponent,
+        canActivate:[adminGaurd]
     },
     {
         path: 'admin/products/:id',
-        component:  ProductFormComponent
+        component:  ProductFormComponent,
+        canActivate:[adminGaurd]
+    },
+    {
+        path:"products",
+        component: ProductListComponent,
+        canActivate:[authGaurd]
+    },
+    {
+        path:"product/:id",
+        component: ProductDetailsComponent,
+        canActivate:[authGaurd]
+    },
+    {
+        path:"profile",
+        component: CustomerProfileComponent,
+        canActivate:[authGaurd]
+    },
+    {
+        path: "register",
+        component : RegisterComponent
+    },
+    {
+        path:"login",
+        component: LoginComponent
     },
 ];

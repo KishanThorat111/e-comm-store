@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { inject } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Product } from '../types/product';
+import { Category } from '../types/category';
 
 
 @Injectable({
@@ -17,5 +18,8 @@ export class CustomerService {
   }
   getFeaturedProducts(){
     return this.http.get<Product[]>(environment.apiUrl + "/customer/featured-products");
+  }
+  getCategories(){
+    return this.http.get<Category[]>(environment.apiUrl + "/customer/categories");
   }
 }
