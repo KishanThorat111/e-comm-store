@@ -4,11 +4,12 @@ import { Category } from '../../types/category';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { CustomerService } from '../../services/customer.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-header',
     standalone: true,
-    imports: [RouterLink],
+    imports: [RouterLink, FormsModule],
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss'
 })
@@ -16,6 +17,7 @@ export class HeaderComponent {
   customerService = inject(CustomerService)
   categorylist: Category[] = [];
   authService = inject(AuthService);
+  searchTerm!:string;
   ngOnInit() {
     this.customerService.getCategories().subscribe((result:any) =>{
       this.categorylist = result;
@@ -29,7 +31,8 @@ export class HeaderComponent {
     }
   } 
   searchCategory(id:string){
-    this.router.navigateByUrl("/products?CategoryId=" + id!)
+    this.searchTerm="";
+    this.router.navigateByUrl("/products?categoryId=" + id!)
   }
   logout(){
     this.authService.logout();

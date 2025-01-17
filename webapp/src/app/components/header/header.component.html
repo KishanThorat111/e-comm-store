@@ -5,6 +5,7 @@
       <input
         type="text"
         placeholder="Search for products..."
+        [(ngModel)]="searchTerm"
         (keyup.enter)="onSearch($event)"
       />
       <button>Search</button>
