@@ -1,1 +1,103 @@
-<p>product-details works!</p>
+@if(product){
+<div class="container mx-auto p-4">
+  <!-- Product Detail Section -->
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white rounded-lg shadow-md p-6"
+  >
+    <!-- Product Gallery -->
+    <div class="flex items-start space-x-4">
+      <!-- Thumbnail Images (Vertical Layout with Scroll) -->
+      <div class="flex flex-col gap-2 mr-4 max-h-96 overflow-y-auto">
+        @for (url of product.images; track $index) {
+        <img
+          [src]="url"
+          class="w-24 h-24 object-cover rounded-md cursor-pointer"
+          (click)="changeImage(url)"
+          style="flex: 0 0 auto"
+        />
+        }
+      </div>
+
+      <!-- Main Product Image -->
+      <div>
+        <img
+          [src]="mainImage"
+          class="w-96 h-96 object-cover rounded-md mb-4"
+          style="height: inherit; width: inherit"
+        />
+      </div>
+    </div>
+
+    <!-- Product Details -->
+    <div>
+      <h1 class="text-3xl font-bold mb-2">{{ product.name }}</h1>
+      <div class="text-xl mb-4">
+        <div class="flex gap-8">
+          <span class="text-gray-400"
+            ><s>{{ product.price }}₹</s></span
+          >
+          <span class="text-orange-300">{{ product.discount }}% OFF</span>
+          <span class="text-green-600 font-semibold">{{ sellingPrice }}₹</span>
+        </div>
+      </div>
+      <p class="text-gray-600 mb-6">{{ product.shortDescription }}</p>
+
+      <button mat-flat-button color="primary" class="mr-2 shadow">
+        Add to Cart
+      </button>
+      <button mat-flat-button color="primary" class="shadow">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- Additional Details -->
+  <div class="mt-6 bg-white rounded-lg shadow-md p-6">
+    <h2 class="text-2xl font-semibold mb-4">Product Description</h2>
+    <pre>{{ product.description }}</pre>
+  </div>
+  @if (similarProducts.length) {
+  <div class="my-4">
+    <h4 class="text-2xl font-bold">Similar Products</h4>
+    <div class="grid grid-cols-4 gap-6">
+      @for (product of similarProducts; track $index) {
+      <div class="shadow rounded-lg overflow-hidden">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+      }
+    </div>
+  </div>
+  }
+  <!-- Product Reviews -->
+  <div class="mt-6 bg-white rounded-lg shadow-md p-6">
+    <h2 class="text-2xl font-semibold mb-4">Customer Reviews</h2>
+
+    <!-- Single Review -->
+    <div class="border-b border-gray-200 pb-4 mb-4">
+      <div class="flex items-center mb-2">
+        <div class="text-yellow-400 text-lg mr-2">★★★★☆</div>
+        <p class="text-gray-600 text-sm">by John Doe on January 15, 2025</p>
+      </div>
+      <p class="text-gray-600">
+        This product is amazing! The quality is excellent, and it arrived on
+        time.
+      </p>
+    </div>
+
+    <!-- Add a Review -->
+    <form class="mt-4">
+      <h3 class="text-xl font-semibold mb-2">Write a Review</h3>
+      <textarea
+        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        rows="4"
+        placeholder="Share your thoughts about the product"
+      ></textarea>
+      <button
+        class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+}@else {
+<h2>Loading....</h2>
+}

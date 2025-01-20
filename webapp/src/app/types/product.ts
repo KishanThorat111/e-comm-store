@@ -1,14 +1,14 @@
 export interface Product {
 imageUrl: any;
-    _id?: String;
-    name: String;
-    shortDescription: String;
-    description: String;
-    price: Number;
-    discount: Number;
-    images: [String];
-    categoryId: String;
-    brandId: String;
+    _id?: string;
+    name: string;
+    shortDescription: string;
+    description: string;
+    price: number;
+    discount: number;
+    images: [string];
+    categoryId: string;
+    brandId: string;
     isFeatured: boolean;
     isNew: boolean;
 

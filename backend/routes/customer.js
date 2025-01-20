@@ -3,6 +3,7 @@ const {
   getNewProducts,
   getFeaturedProducts,
   getProductForListing,
+  getProduct,
 } = require("../handlers/product-handler");
 const { getCategories } = require("../handlers/category-handler");
 const { getBrands } = require("../handlers/brand-handler");
@@ -41,6 +42,12 @@ router.get("/products", async function (req, res) {
     brandId
   );
   res.send(products);
+});
+
+router.get("/product/:id", async (req, res) => {
+  const id = req.params["id"];
+  const product = await getProduct(id);
+  res.send(product);
 });
 
 module.exports = router;
