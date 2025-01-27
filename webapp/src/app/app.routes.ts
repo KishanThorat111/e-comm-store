@@ -14,6 +14,8 @@ import { authGaurd } from './core/auth-guard';
 import { AdminDashboardComponent } from './components/manage/admin-dashboard/admin-dashboard.component';
 import { adminGaurd } from './core/admin-guard';
 import { CustomerProfileComponent } from './components/customer-profile/customer-profile.component';
+import { WishlistsComponent } from './components/wishlists/wishlists.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 export const routes: Routes = [
     {
@@ -84,6 +86,16 @@ export const routes: Routes = [
     {
         path:"profile",
         component: CustomerProfileComponent,
+        canActivate:[authGaurd]
+    },
+    {
+        path:"wishlists",
+        component: WishlistsComponent,
+        canActivate:[authGaurd]
+    },
+    {
+        path:"cart",
+        component: ShoppingCartComponent,
         canActivate:[authGaurd]
     },
     {

@@ -5,6 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { RouterLink } from '@angular/router';
+import { WishlistService } from '../../services/wishlist.service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
     selector: 'app-home',
@@ -28,6 +30,8 @@ export class HomeComponent {
   newProducts:Product[] = [];
   featuredProducts:Product[] = [];
   bannerImages:Product[] = [];
+  wishlistService=inject(WishlistService);
+  cartService=inject(CartService);
   ngOnInit(){
     this.customerService.getFeaturedProducts().subscribe((result)=>{
       this.featuredProducts=result;
@@ -39,6 +43,8 @@ export class HomeComponent {
       console.log(this.newProducts);
       this.bannerImages.push(...result);
     });
+    this.wishlistService.init();
+    this.cartService.init();
   }
 }
 

@@ -41,11 +41,42 @@
         </div>
       </div>
       <p class="text-gray-600 mb-6">{{ product.shortDescription }}</p>
-
-      <button mat-flat-button color="primary" class="mr-2 shadow">
-        Add to Cart
-      </button>
-      <button mat-flat-button color="primary" class="shadow">Buy Now</button>
+      <div class="flex gap-8">
+        <button
+          mat-raised-button
+          color="accent"
+          class="flex items-center"
+          style="margin-left: 4px; white-space: nowrap"
+          (click)="addToWishlist(product)"
+        >
+          @if (isInWishlist(product)) {
+          <mat-icon class="text-red-500">favorite</mat-icon>
+          <span>Remove from Wishlist</span>
+          }@else {
+          <mat-icon class="text-red-500">favorite_border</mat-icon> add To
+          Wishlist }
+        </button>
+        @if (isProductInCart(product._id!)) {
+        <button
+          mat-raised-button
+          color="primary"
+          class="mr-2 shadow"
+          (click)="addToCart(product)"
+        >
+          <mat-icon>add_shopping_cart</mat-icon> Add to Cart
+        </button>
+        }@else {
+        <button
+          mat-raised-button
+          color="primary"
+          class="mr-2 shadow"
+          (click)="addToCart(product)"
+        >
+          <mat-icon>remove_shopping_cart</mat-icon> Remove from Cart
+        </button>
+        }
+      </div>
+      <!-- <button mat-flat-button color="primary" class="shadow">Buy Now</button> -->
     </div>
   </div>
 

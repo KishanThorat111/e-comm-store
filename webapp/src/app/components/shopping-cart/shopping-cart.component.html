@@ -1,0 +1,86 @@
+<div class="container mx-auto py-8 px-4">
+  <!-- Heading -->
+  <h1 class="text-3xl font-bold text-gray-800 mb-6">Shopping Cart</h1>
+
+  <!-- Cart Section -->
+  <div class="flex flex-col md:flex-row gap-8">
+    <!-- Cart Items -->
+    <div class="w-full md:w-3/4 bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">Your Items</h2>
+      <!-- Cart Item -->
+      @for (item of cartItems; track $index) {
+      <div
+        class="flex items-center justify-between border-b border-gray-300 py-4"
+      >
+        <div class="flex items-center">
+          <img
+            [src]="item.product.images[0]"
+            alt="Product"
+            class="w-16 h-16 object-cover rounded"
+          />
+          <div class="ml-4">
+            <h3 class="!text-2xl !font-medium text-gray-700">
+              {{ item.product.name }}
+            </h3>
+            <div class="flex gap-2 items-baseline">
+              <span class="text-xs text-gray-400"
+                ><s>{{ item.product.price }}₹</s></span
+              >
+              <span class="text-xs text-orange-300"
+                >{{ item.product.discount }}% OFF</span
+              >
+              <span class="text-lg text-green-600 font-semibold"
+                >{{ sellingPrice(item.product) }}₹</span
+              >
+            </div>
+            <div>
+              Ammount : {{ sellingPrice(item.product) * item.quantity }}₹
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <div class="flex items-center">
+            <span class="mr-4">Quantity:</span>
+            <span
+              (click)="addToCart(item.product._id!, -1)"
+              class="text-lg bg-gray-400 rounded-sm px-3 py-2 shadow cursor-pointer"
+              >-</span
+            >
+            <span class="mx-2">{{ item.quantity }}</span>
+            <span
+              (click)="addToCart(item.product._id!, 1)"
+              class="text-lg bg-gray-400 rounded-sm px-3 py-2 shadow cursor-pointer"
+              >+</span
+            >
+          </div>
+        </div>
+      </div>
+      }
+      <!-- Repeat for more items -->
+    </div>
+
+    <!-- Summary Section -->
+    <div class="w-full md:w-1/4 bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">Order Summary</h2>
+      <div class="flex justify-between mb-4">
+        <p class="text-gray-500">Subtotal</p>
+        <p class="text-gray-700 font-medium">{{ totalAmount }}₹</p>
+      </div>
+      <div class="flex justify-between mb-6">
+        <p class="text-gray-500">Shipping</p>
+        <p class="text-gray-700 font-medium">Free</p>
+      </div>
+      <div
+        class="flex justify-between text-lg font-semibold text-gray-800 mb-6"
+      >
+        <p class="text-gray-500">Total:</p>
+        <span>{{ totalAmount }}₹</span>
+      </div>
+      <button
+        class="w-full bg-blue-600 text-white font-medium py-2 rounded-lg hover:bg-blue-700 transition"
+      >
+        Proceed to Checkout
+      </button>
+    </div>
+  </div>
+</div>

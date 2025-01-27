@@ -34,4 +34,5 @@ export class CustomerService {
 
     return this.http.get<Product>(environment.apiUrl + "/customer/product/"+id);
   }
+
 }
