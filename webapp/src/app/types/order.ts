@@ -1,9 +1,9 @@
 import { CartItem } from "./cartItem";
 
 export interface Order{
-    _id?: String;
+    _id?: string;
     items:CartItem[];
-    paymentType:String;
+    paymentType:string;
     address:any;
     date:Date;
     status?:string

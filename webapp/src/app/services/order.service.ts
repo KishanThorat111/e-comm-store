@@ -17,4 +17,12 @@ export class OrderService {
   getCustomerOrders(){
     return this.http.get<Order[]>(environment.apiUrl+"/customer/orders")
   }
+  getAdminOrder(){
+    return this.http.get<Order[]>(environment.apiUrl+"/orders")
+  }
+  updateOrderStatus(id:string, status:string){
+    return this.http.post(environment.apiUrl+"/orders/"+id,{
+      status:status
+    });
+  }
 }

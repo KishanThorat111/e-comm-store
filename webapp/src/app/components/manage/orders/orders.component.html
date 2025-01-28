@@ -1,14 +1,32 @@
-<!-- Cart Items -->
 <div class="py-10 px-20">
   <h3>MyOrders</h3>
   <div class="rounded-lg overflow-hidden">
-    <h2 class="text-xl font-semibold text-gray-700 mb-4">Your Items</h2>
     <!-- Cart Item -->
 
     @for (order of orders; track $index) {
-    <h6>Order Id: {{ order._id }}</h6>
-    <span>Date : </span><span>{{ order.date | date : "mediumDate" }}</span>
-    <p>Order Status: {{ order.status }}</p>
+    <div class="flex justify-between">
+      <div class="w-6/12">
+        <h6>Order Id: {{ order._id }}</h6>
+        <span>Date : </span><span>{{ order.date | date : "mediumDate" }}</span>
+        <h6>Shipping Address</h6>
+        <p>{{ order.address.address1 }}</p>
+        <p>{{ order.address.address2 }}</p>
+        <p>{{ order.address.city }}</p>
+        <p>{{ order.address.pincode }}</p>
+      </div>
+      <div class="w-6/12">
+        <mat-button-toggle-group
+          [value]="order.status"
+          name="staus"
+          aria-label="Font Style"
+          (change)="statusChanged($event, order)"
+        >
+          <mat-button-toggle value="Dispatched">Dispatched</mat-button-toggle>
+          <mat-button-toggle value="Shipped">Shipped</mat-button-toggle>
+          <mat-button-toggle value="Delivered">Delivered</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </div>
     <div class="mb-10 shadow-lg">
       @for (item of order.items; track $index) {
       <div
