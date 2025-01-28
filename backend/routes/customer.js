@@ -17,9 +17,11 @@ const {
   getCartItems,
   addToCart,
   removefromCart,
+  clearCart
 } = require("./../handlers/shopping-cart-handler");
 const router = express.Router();
 
+const {addOrder, getCustomerOrders} = require("../handlers/order-handler");
 router.get("/new-products", async function (req, res) {
   const products = await getNewProducts();
   res.send(products);
@@ -109,5 +111,22 @@ router.delete("/carts/:id", async (req, res) => {
   const items = await removefromCart(userId, productId);
   res.send(items);
 });
+
+router.post("/order", async (req, res) => {
+  const userId = req.user.id;
+  const order = req.body;
+  await addOrder(userId, order);
+  await clearCart(userId);
+  return res.send({ 
+    message: "Order has been placed successfully",
+  });
+})
+
+
+router.get("/orders", async (req, res) => {
+  const userId = req.user.id;
+  const orders=await getCustomerOrders(userId);
+  return res.send(orders);
+})
 
 module.exports = router;

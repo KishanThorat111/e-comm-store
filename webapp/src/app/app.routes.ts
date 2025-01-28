@@ -16,6 +16,7 @@ import { adminGaurd } from './core/admin-guard';
 import { CustomerProfileComponent } from './components/customer-profile/customer-profile.component';
 import { WishlistsComponent } from './components/wishlists/wishlists.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { CustomerOrdersComponent } from './components/customer-orders/customer-orders.component';
 
 export const routes: Routes = [
     {
@@ -105,5 +106,10 @@ export const routes: Routes = [
     {
         path:"login",
         component: LoginComponent
+    },
+    {
+        path:"orders",
+        component: CustomerOrdersComponent,
+        canActivate:[authGaurd]
     },
 ];

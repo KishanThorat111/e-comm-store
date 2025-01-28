@@ -43,8 +43,6 @@ export class HomeComponent {
       console.log(this.newProducts);
       this.bannerImages.push(...result);
     });
-    this.wishlistService.init();
-    this.cartService.init();
   }
 }
 

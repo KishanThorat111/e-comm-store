@@ -1,5 +1,6 @@
 <div class="container mx-auto py-8 px-4">
   <!-- Heading -->
+  @if (orderStep==0) {
   <h1 class="text-3xl font-bold text-gray-800 mb-6">Shopping Cart</h1>
 
   <!-- Cart Section -->
@@ -34,7 +35,7 @@
               >
             </div>
             <div>
-              Ammount : {{ sellingPrice(item.product) * item.quantity }}₹
+              Amount : {{ sellingPrice(item.product) * item.quantity }}₹
             </div>
           </div>
         </div>
@@ -77,10 +78,76 @@
         <span>{{ totalAmount }}₹</span>
       </div>
       <button
+        (click)="checkout()"
         class="w-full bg-blue-600 text-white font-medium py-2 rounded-lg hover:bg-blue-700 transition"
       >
         Proceed to Checkout
       </button>
     </div>
   </div>
+  }@else if (orderStep==1) {
+  <h1 class="text-3xl font-bold text-gray-800 mb-6">Your Order Address</h1>
+  <form [formGroup]="addressForm">
+    <!-- Name -->
+    <div>
+      <mat-form-field class="w-full">
+        <mat-label for="name">address1</mat-label>
+        <input
+          type="text"
+          formControlName="address1"
+          matInput
+          placeholder="address1"
+        />
+      </mat-form-field>
+    </div>
+
+    <!-- Email -->
+    <div>
+      <mat-form-field class="w-full">
+        <mat-label for="name">address2</mat-label>
+        <input
+          type="text"
+          formControlName="address2"
+          matInput
+          placeholder="address2"
+        />
+      </mat-form-field>
+    </div>
+
+    <!-- Password -->
+    <div>
+      <mat-form-field class="w-full">
+        <mat-label for="name">City</mat-label>
+        <input type="text" formControlName="city" matInput placeholder="city" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="w-full">
+        <mat-label for="name">PinCode</mat-label>
+        <input
+          type="text"
+          formControlName="pincode"
+          matInput
+          placeholder="pincode"
+        />
+      </mat-form-field>
+    </div>
+    <!-- Submit Button -->
+    <div>
+      <button mat-raised-button (click)="addAddress()">Continue</button>
+    </div>
+  </form>
+  }@else if (orderStep==2) {
+  <h1 class="text-3xl font-bold text-gray-800 mb-6">Select Payment Method</h1>
+  <div class="p-30 shadow">
+    <mat-radio-group [(ngModel)]="paymentType">
+      <mat-radio-button value="cash">Cash</mat-radio-button>
+      <mat-radio-button value="card" [disabled]="true">Card</mat-radio-button>
+    </mat-radio-group>
+
+    <button class="mt-20" mat-raised-button (click)="completeOrder()">
+      Continue
+    </button>
+  </div>
+  }
 </div>
