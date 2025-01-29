@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 80;
 const cors = require("cors");
 const categoryRoutes = require("./routes/category");
 const brandRoutes = require("./routes/brand");
@@ -26,12 +26,9 @@ app.use("/auth", authRoutes);
 
 //mongodb://localhost:27017
 async function connectDB() {
-  await mongoose.connect(
-    process.env.mongoConnection,
-    {
-      dbName: "e-comm-store-db",
-    }
-  ); 
+  await mongoose.connect(process.env.mongoConnection, {
+    dbName: "e-comm-store-db",
+  });
   console.log("MongoDB connected");
 }
 
