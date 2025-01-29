@@ -24,10 +24,14 @@ app.use("/product", verifyToken, isAdmin, productRoutes);
 app.use("/customer", verifyToken, customerRoutes);
 app.use("/auth", authRoutes);
 
+//mongodb://localhost:27017
 async function connectDB() {
-  await mongoose.connect("mongodb://localhost:27017", {
-    dbName: "e-comm-store-db",
-  });
+  await mongoose.connect(
+    process.env.mongoConnection,
+    {
+      dbName: "e-comm-store-db",
+    }
+  ); 
   console.log("MongoDB connected");
 }
 

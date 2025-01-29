@@ -32,7 +32,7 @@ export class ProductFormComponent {
     categoryId: [null, [Validators.required]],
     brandId: [null, [Validators.required]],
     isFeatured: [false],
-    isNewProducts: [false]
+    isNewProduct: [false]
   });
   
   categoryService=inject(CategoryService);
