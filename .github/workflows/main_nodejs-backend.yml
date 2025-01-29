@@ -30,7 +30,7 @@ jobs:
           npm run build --if-present
 
       - name: Zip artifact for deployment
-        run: cd ./backend && zip -r ../release.zip ./* -r
+        run: cd ./backend && zip -r ../release.zip ./*
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
