@@ -57,6 +57,6 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'nodejs-backend'
-          slot-name: 'Production'
+          # slot-name: 'Production'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_71E4B57696644B11BF34CB2AE5DF4DBF }}
