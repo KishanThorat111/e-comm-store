@@ -41,9 +41,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    
     
     steps:
       - name: Download artifact from build job
@@ -61,4 +59,4 @@ jobs:
           app-name: 'nodejsBackend'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D6478D409A2342E3BD0431DFD75AB60C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F865AA50B0A249788CFD25E9CC8EDE47 }}
