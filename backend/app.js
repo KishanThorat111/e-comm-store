@@ -11,14 +11,31 @@ const customerRoutes = require("./routes/customer");
 const authRoutes = require("./routes/auth");
 const { verifyToken, isAdmin } = require("./middleware/auth-middleware");
 
-app.use(
-  cors({
-    origin: ["https://victorious-forest-0704fbe00.4.azurestaticapps.net"], // Allow only your Azure frontend
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow required methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allow necessary headers
-    credentials: true, // If using cookies or authentication tokens
-  })
-);
+app.set("trust proxy", 1);
+
+// CORS configuration
+const allowedOrigins = [
+  "https://victorious-forest-0704fbe00.4.azurestaticapps.net",
+  // "https://nodejs-hgtc.onrender.com/",
+  "http://localhost:8080", // Local development // Add your Render.com backend URL here
+  "http://localhost:3000",
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or Postman)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true); // Allow the origin
+    } else {
+      callback(new Error("Not allowed by CORS")); // Deny the origin
+    }
+  },
+  credentials: true, // Allow credentials (cookies, headers, etc.)
+};
+
+// Enable CORS for the application
+app.use(cors(corsOptions));
+app.options("*", cors());
 app.use(express.json());
 app.get("/", (req, res) => {
   res.send("server running");
