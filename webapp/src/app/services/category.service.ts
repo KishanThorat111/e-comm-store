@@ -10,26 +10,26 @@ export class CategoryService {
   constructor() { }
 
   getCategories() {
-    return this.http.get('http://localhost:3000/category');
+    return this.http.get('http://localhost:8080/category');
   }
 
 
   getCategoryById(id: string) {
-    return this.http.get<Category[]>('http://localhost:3000/category/' + id);
+    return this.http.get<Category[]>('http://localhost:8080/category/' + id);
   }
   addCategory(name: string) {
-    return this.http.post<Category>('http://localhost:3000/category',{
+    return this.http.post<Category>('http://localhost:8080/category',{
       name: name,
     });
   }
 
   updateCategory(id: string, name: string) {
-    return this.http.put('http://localhost:3000/category/' + id, {
+    return this.http.put('http://localhost:8080/category/' + id, {
       name: name,
     });
   }
 
   deleteCategoryById(id: string) {
-    return this.http.delete('http://localhost:3000/category/' + id);
+    return this.http.delete('http://localhost:8080/category/' + id);
   }
 }
