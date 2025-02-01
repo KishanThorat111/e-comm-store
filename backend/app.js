@@ -16,7 +16,7 @@ app.set("trust proxy", 1);
 // CORS configuration
 const allowedOrigins = [
   "https://victorious-forest-0704fbe00.4.azurestaticapps.net",
-  // "https://nodejs-hgtc.onrender.com/",
+  // "https://nodejs-hgtc.onrender.com",
   "http://localhost:8080", // Local development // Add your Render.com backend URL here
   "http://localhost:3000",
 ];
@@ -30,7 +30,7 @@ const corsOptions = {
       callback(new Error("Not allowed by CORS")); // Deny the origin
     }
   },
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow all HTTP methods
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow all HTTP methods
   credentials: true, // Allow credentials (cookies, headers, etc.)
   preflightContinue: false, // Continue handling preflight requests
   optionsSuccessStatus: 204, // Allow credentials (cookies, headers, etc.)
