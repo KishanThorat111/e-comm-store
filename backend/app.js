@@ -30,15 +30,15 @@ const corsOptions = {
       callback(new Error("Not allowed by CORS")); // Deny the origin
     }
   },
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow all HTTP methods
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow all HTTP methods
   credentials: true, // Allow credentials (cookies, headers, etc.)
-  preflightContinue: true, // Continue handling preflight requests
+  preflightContinue: false, // Continue handling preflight requests
   optionsSuccessStatus: 204, // Allow credentials (cookies, headers, etc.)
 };
 
 // Enable CORS for the application
 app.use(cors(corsOptions));
-app.options("*", cors());
+app.options("*", cors(corsOptions));
 app.use(express.json());
 app.get("/", (req, res) => {
   res.send("server running");
