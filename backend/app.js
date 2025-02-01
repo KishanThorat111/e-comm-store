@@ -30,7 +30,7 @@ const corsOptions = {
       callback(new Error("Not allowed by CORS")); // Deny the origin
     }
   },
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow all HTTP methods
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow all HTTP methods
   credentials: true, // Allow credentials (cookies, headers, etc.)
   preflightContinue: false, // Continue handling preflight requests
   optionsSuccessStatus: 204, // Allow credentials (cookies, headers, etc.)
