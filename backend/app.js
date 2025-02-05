@@ -16,7 +16,7 @@ app.set("trust proxy", 1);
 // CORS configuration
 const allowedOrigins = [
   "https://victorious-forest-0704fbe00.4.azurestaticapps.net",
-  // "https://nodejs-hgtc.onrender.com",
+  "https://nodejs-hgtc.onrender.com",
   "http://localhost:8080", // Local development // Add your Render.com backend URL here
   "http://localhost:3000",
 ];
