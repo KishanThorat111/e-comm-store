@@ -14,7 +14,7 @@ const customerRoutes = require("./routes/customer");
 const authRoutes = require("./routes/auth");
 const { verifyToken, isAdmin } = require("./middleware/auth-middleware");
 
-app.set("trust proxy", 1);
+// app.set("trust proxy", 1);
 
 //mongodb://localhost:27017
 // MongoDB connection
