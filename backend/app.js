@@ -1,8 +1,10 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 const express = require("express");
-const MongoStore = require("connect-mongo");
+// const MongoStore = require("connect-mongo");
 const app = express();
-const port = 8080;
+// const port = 8080;
+const port = process.env.PORT || 8080;
 const cors = require("cors");
 const categoryRoutes = require("./routes/category");
 const brandRoutes = require("./routes/brand");
@@ -13,7 +15,6 @@ const authRoutes = require("./routes/auth");
 const { verifyToken, isAdmin } = require("./middleware/auth-middleware");
 
 app.set("trust proxy", 1);
-
 
 //mongodb://localhost:27017
 // MongoDB connection
@@ -30,7 +31,6 @@ async function connectDB() {
 }
 
 connectDB();
-
 
 app.use(express.json());
 
