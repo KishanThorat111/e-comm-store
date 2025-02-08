@@ -8,7 +8,7 @@
         [(ngModel)]="searchTerm"
         (keyup.enter)="onSearch($event)"
       />
-      <button>Search</button>
+      <button (click)="onSearch($event)">Search</button>
     </div>
     <div class="profile flex gap-2 items-center">
       @if (authService.isAdmin) {
