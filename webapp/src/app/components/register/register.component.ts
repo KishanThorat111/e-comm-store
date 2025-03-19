@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   imports: [MatInputModule, MatButtonModule, ReactiveFormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
-})
+}) 
 export class RegisterComponent {
   formbuilder=inject(FormBuilder);
   registerForm = this.formbuilder.group({
