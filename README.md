@@ -95,4 +95,4 @@ Feel free to explore the repository or reach out for collaboration or questions!
 ---
 
 *Made with ❤️ by Kishan Thorat*  
-[GitHub](https://github.com/KishanThorat111) | [LinkedIn](https://www.linkedin.com/in/kishanthorat/) | [[Portfolio](https://portfolio.ecommerceweb.shop)
+[GitHub](https://github.com/KishanThorat111) | [LinkedIn](https://www.linkedin.com/in/kishanthorat/) | [Portfolio](https://portfolio.ecommerceweb.shop)
