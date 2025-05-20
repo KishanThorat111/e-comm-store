@@ -1,9 +1,4 @@
-# E-Commerce Website (Demo)
-
-![E-Commerce Demo](https://victorious-forest-0704fbe00.4.azurestaticapps.net/assets/logo.png)  
-*(Optional: add a screenshot or logo if available)*
-
----
+# E-Commerce Website
 
 ## Project Links
 
