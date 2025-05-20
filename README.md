@@ -1,86 +1,98 @@
-# E-Commerce Website
-
-## Project Links
-
-- **GitHub Repository:** [https://github.com/KishanThorat111/e-comm-store](https://github.com/KishanThorat111/e-comm-store)  
-- **Frontend (Azure Static Web App):** [https://victorious-forest-0704fbe00.4.azurestaticapps.net/login](https://victorious-forest-0704fbe00.4.azurestaticapps.net/login)  
-- **Backend (Vercel):** [https://e-comm-store-backend-back4app.vercel.app/](https://e-comm-store-backend-back4app.vercel.app/)
+# 🛒 E-Commerce Website
 
 ---
 
-## Project Timeline
+## 🚀 Project Overview
+
+Welcome to the **E-Commerce Web Application** — a full-stack, responsive e-commerce site built to showcase modern web development skills using Angular 18 and Node.js.  
+This project was developed as an internal proof of concept for **Avant Data** to demonstrate scalable, secure, and user-friendly online shopping experiences.
+
+---
+
+## 🌐 Live Links
+
+- **GitHub Repository:**  
+  [https://github.com/KishanThorat111/e-comm-store](https://github.com/KishanThorat111/e-comm-store)  
+- **Frontend (Azure Static Web Apps):**  
+  [https://victorious-forest-0704fbe00.4.azurestaticapps.net/login](https://victorious-forest-0704fbe00.4.azurestaticapps.net/login)  
+- **Backend (Vercel):**  
+  [https://e-comm-store-backend-back4app.vercel.app/](https://e-comm-store-backend-back4app.vercel.app/)
+
+---
+
+## 📅 Timeline
 
 - **Start Date:** November 1, 2024  
-- **End Date:** February 28, 2025 (Ongoing)
+- **End Date:** February 28, 2025 (Currently in development)  
 
 ---
 
-## Short Description
+## 📝 Short Description
 
-Built a responsive e-commerce demo website using Angular 18, SCSS, and TailwindCSS featuring product catalog, advanced search, filtering, and cart functionalities. Developed a secure backend with Node.js, Express.js, MongoDB, and JWT authentication to manage user sessions and API security.
-
----
-
-## Project Overview
-
-This project is an internal proof-of-concept e-commerce web application developed for **Avant Data** to showcase full-stack development skills and responsive UI design. 
-
-### Frontend
-
-- Developed using **Angular 18**, leveraging **TypeScript** for strong typing, scalability, and maintainability.
-- Styled with **SCSS** and **TailwindCSS** to ensure a modern, mobile-first, and responsive design.
-- Features include:
-  - Dynamic product catalog with real-time rendering.
-  - Advanced search and filtering for enhanced product discovery.
-  - Secure shopping cart with state persistence.
-
-### Backend
-
-- Built with **Node.js**, **Express.js**, and **MongoDB** for flexible and scalable data management.
-- Implemented **JWT-based authentication** for secure login, logout, and session management.
-- RESTful APIs are modular, well-documented, and tested using **Postman**.
-
-### Technologies Used
-
-| Frontend               | Backend                 | Tools & Libraries     |
-|------------------------|-------------------------|----------------------|
-| Angular 18             | Node.js                 | Postman              |
-| TypeScript             | Express.js              | MongoDB              |
-| SCSS                   | MongoDB (NoSQL)         | JWT Authentication   |
-| TailwindCSS            | JWT Authentication      |                      |
-| JavaScript (UI Logic)  | JavaScript (Backend)    |                      |
+Built a **responsive e-commerce website** with Angular 18, SCSS, and TailwindCSS featuring a dynamic product catalog, advanced search, and a secure shopping cart. Backend powered by Node.js, Express.js, MongoDB, and JWT authentication for safe and smooth user sessions.
 
 ---
 
-## Key Contributions & Features
+## 🔍 Detailed Description
 
-- Responsive, mobile-first e-commerce UI ensuring compatibility across devices.
-- Enhanced frontend codebase with TypeScript for improved developer experience and fewer runtime errors.
-- Dynamic UI managed with JavaScript enabling smooth state transitions and user interactions.
-- Robust backend API development with authentication and security best practices.
-- Seamless integration between frontend and backend for a smooth user experience.
-- Delivered as a proof-of-concept, used internally by Avant Data as a foundation for future client projects.
+As a **Full Stack Developer** at Avant Data, I designed and implemented a scalable e-commerce that highlights best practices in modern web development:
 
----
+- 💻 **Frontend:** Developed with Angular 18 using TypeScript for robust type safety and maintainability, combined with SCSS and TailwindCSS for beautiful, responsive styling.  
+- 🔍 **Features:**  
+  - Real-time product catalog rendering  
+  - Advanced search & filtering functionality for effortless product discovery  
+  - Secure shopping cart with state persistence for seamless user experience  
+- ⚙️ **Backend:** Built with Node.js, Express.js, and MongoDB to ensure performance and scalability.  
+- 🔐 **Authentication:** Integrated JWT-based authentication to protect user data and sessions.  
+- 📋 **API Development:** RESTful APIs crafted and tested thoroughly with Postman for modular, reusable endpoints.  
+- 🤝 **Full-stack Integration:** Harmonized frontend and backend using JavaScript and TypeScript to deliver a production-style application.  
 
-## Project Outcome
-
-This project successfully demonstrated a production-ready full-stack application encompassing:
-
-- Responsive UI/UX with Angular and TailwindCSS.
-- Secure authentication flow with JWT.
-- Modular, testable backend APIs.
-- End-to-end integration showcasing strong full-stack capabilities.
-
-It currently serves as a technical showcase and internal reference for Avant Data’s client-facing e-commerce solutions.
+This project served as a technical showcase for Avant Data’s internal use, laying the groundwork for future client-facing e-commerce solutions.
 
 ---
 
-## How to Run Locally
+## 🛠️ Tech Stack
 
-### Frontend
+| Frontend            | Backend                    | Tools & Libraries        |
+|---------------------|----------------------------|-------------------------|
+| Angular 18          | Node.js                    | Postman                 |
+| TypeScript          | Express.js                 | MongoDB                 |
+| SCSS                | MongoDB                    | JWT Authentication      |
+| TailwindCSS         | JSON Web Tokens (JWT)      | Git/GitHub              |
+| JavaScript (UI Logic) | JavaScript (API Logic)    |                         |
 
-```bash
-cd e-comm-store/frontend
-npm install
-ng serve
+---
+
+## 💡 Key Features
+
+- 📱 Mobile-first responsive design  
+- 🛍️ Fully functional product catalog with live search & filters  
+- 🔄 Persistent shopping cart with state management  
+- 🔒 Secure user login/logout with JWT authentication  
+- 🛠️ RESTful API integration tested via Postman  
+- ⚡ Fast, scalable backend with MongoDB database
+
+---
+
+## 🙌 Outcome & Impact
+
+- Delivered a robust **proof of concept** e-commerce application showcasing full-stack development expertise  
+- Created a scalable foundation for future **client-facing projects** at Avant Data  
+- Demonstrated strong skills in **responsive UI/UX**, secure authentication, and API-driven architecture  
+
+---
+
+## 📫 Contact & Contribution
+
+Feel free to explore the repository or reach out for collaboration or questions!
+[https://portfolio.ecommerceweb.shop/pages/contact/contact.html](https://portfolio.ecommerceweb.shop/pages/contact/contact.html)
+
+---
+
+### Thanks for checking out this project!  
+✨ Happy coding & shopping! 🛒💻
+
+---
+
+*Made with ❤️ by Kishan Thorat*  
+[GitHub](https://github.com/KishanThorat111) | [LinkedIn](https://www.linkedin.com/in/kishanthorat/) | [[Portfolio](https://portfolio.ecommerceweb.shop)
